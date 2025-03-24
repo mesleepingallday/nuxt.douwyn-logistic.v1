@@ -41,7 +41,6 @@ export default defineNuxtConfig({
   },
 
   i18n: {
-    vueI18n: './i18n.config.ts',
     locales: [
       {
         code: 'en',
@@ -55,8 +54,15 @@ export default defineNuxtConfig({
         language: 'vi',
         name: 'Tiếng Việt',
         file: 'vi.json'
+      },
+      {
+        code: 'zh_cn',
+        language: 'zh_cn',
+        name: 'Chinese',
+        file: 'zh.json'
       }
     ],
+    lazy: true,
     defaultLocale: 'en',
     langDir: 'locales/',
     detectBrowserLanguage: {
@@ -65,5 +71,15 @@ export default defineNuxtConfig({
       alwaysRedirect: true,
       redirectOn: 'root'
     }
+  },
+
+  strapi: {
+    url: process.env.STRAPI_URL || 'http://localhost:1337',
+    token: process.env.STRAPI_TOKEN || undefined
+    prefix: '/api',
+    admin: '/admin',
+    version: 'v5',
+    cookie: {},
+    cookieName: 'strapi_jwt'
   }
 })

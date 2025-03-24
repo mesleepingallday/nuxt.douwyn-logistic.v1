@@ -1,21 +1,18 @@
 <script setup lang="ts">
-import { en, vi } from '@nuxt/ui/locale'
+import { en, vi, zh_cn } from '@nuxt/ui/locale'
 
 const nuxtApp = useNuxtApp()
 const { activeHeadings, updateHeadings } = useScrollspy()
+const { t } = useI18n()
 
-const items = computed(() => [{
-  label: 'Features',
-  to: '#features',
+const itemsRight = computed(() => [{
+  label: t('news'),
+  to: '/blog',
   active: activeHeadings.value.includes('features') && !activeHeadings.value.includes('pricing')
 }, {
-  label: 'Pricing',
-  to: '#pricing',
+  label: t('contact'),
+  to: '/contact',
   active: activeHeadings.value.includes('pricing')
-}, {
-  label: 'Testimonials',
-  to: '#testimonials',
-  active: activeHeadings.value.includes('testimonials') && !activeHeadings.value.includes('pricing')
 }])
 
 const { locale } = useI18n()
@@ -32,33 +29,39 @@ nuxtApp.hooks.hookOnce('page:finish', () => {
 <template>
   <UHeader>
     <template #left>
-      <NuxtLink to="/">
-        <LogoPro class="w-auto h-6 shrink-0" />
-      </NuxtLink>
-
-      <TemplateMenu />
+      <ULocaleSelect v-model="locale" :locales="[en, vi, zh_cn]" />
     </template>
 
     <template #right>
-      <ULocaleSelect v-model="locale" :locales="[en, vi]" />
+      <div class="flex flex-row gap-3 items-center">
+        <UColorModeButton />
+
+        <SearchHeader />
+      </div>
+    </template>
+  </UHeader>
+
+  <UHeader>
+    <template #left>
+      <NuxtLink to="/">
+        <NuxtImg src="/logos/bosch.svg" class="w-auto h-6 shrink-0"/>
+      </NuxtLink>
+
+    </template>
+
+    <template #right>
       <UNavigationMenu
-        :items="items"
+        :items="itemsRight"
         variant="link"
         class="hidden lg:block"
       />
 
-      <UButton
-        label="Download App"
-        variant="subtle"
-        class="hidden lg:block"
-      />
 
-      <UColorModeButton />
     </template>
 
     <template #body>
       <UNavigationMenu
-        :items="items"
+        :items="itemsRight"
         orientation="vertical"
         class="-mx-2.5"
       />
