@@ -41,28 +41,14 @@ export default defineNuxtConfig({
   },
 
   i18n: {
-    locales: [
-      {
-        code: 'en',
-        language: 'en',
-        name: 'English',
-        file: 'en.json',
-        isCatchallLocale: true
-      },
-      {
-        code: 'vi',
-        language: 'vi',
-        name: 'Tiếng Việt',
-        file: 'vi.json'
-      },
-      {
-        code: 'zh_cn',
-        language: 'zh_cn',
-        name: 'Chinese',
-        file: 'zh.json'
-      }
-    ],
+    customRoutes: 'config',
+    pages: {
+      en: '/blog',
+      vi: '/bai-viet',
+      zh_cn: '/blog/zh-cn',
+    },
     lazy: true,
+    strategy: 'prefix_except_default',
     defaultLocale: 'en',
     langDir: 'locales/',
     detectBrowserLanguage: {
@@ -75,7 +61,7 @@ export default defineNuxtConfig({
 
   strapi: {
     url: process.env.STRAPI_URL || 'http://localhost:1337',
-    token: process.env.STRAPI_TOKEN || undefined
+    token: process.env.STRAPI_TOKEN || undefined,
     prefix: '/api',
     admin: '/admin',
     version: 'v5',
