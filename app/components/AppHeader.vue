@@ -7,7 +7,7 @@ const { t } = useI18n()
 
 const itemsRight = computed(() => [{
   label: t('news'),
-  to: '/blog',
+  to: '/blogs',
   active: activeHeadings.value.includes('features') && !activeHeadings.value.includes('pricing')
 }, {
   label: t('contact'),
@@ -29,7 +29,10 @@ nuxtApp.hooks.hookOnce('page:finish', () => {
 <template>
   <UHeader>
     <template #left>
-      <ULocaleSelect v-model="locale" :locales="[en, vi, zh_cn]" />
+      <ULocaleSelect
+        v-model="locale"
+        :locales="[en, vi, zh_cn]"
+      />
     </template>
 
     <template #right>
@@ -44,9 +47,12 @@ nuxtApp.hooks.hookOnce('page:finish', () => {
   <UHeader>
     <template #left>
       <NuxtLink to="/">
-        <NuxtImg src="/logos/bosch.svg" class="w-auto h-6 shrink-0"/>
+        <UColorModeImage
+          light="/logos/bosch-light.svg"
+          dark="/logos/bosch.svg"
+          class="w-auto h-6 shrink-0"
+        />
       </NuxtLink>
-
     </template>
 
     <template #right>
@@ -55,8 +61,6 @@ nuxtApp.hooks.hookOnce('page:finish', () => {
         variant="link"
         class="hidden lg:block"
       />
-
-
     </template>
 
     <template #body>

@@ -13,6 +13,7 @@ export interface Post {
   featured_image: string
   category?: {
     name: string
+    slug: string
   }
   author?: {
     name: string
