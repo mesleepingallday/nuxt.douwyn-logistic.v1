@@ -4,5 +4,18 @@
   "news": "News",
   "contact": "Contact",
   "home": "Home",
-  "latest-articles-header": "Latest articles from Douwyn Logistic"
+  "latest-articles-header": "Latest articles from Douwyn Logistic",
+  "on": "On",
+  "sustainability": "Sustainability",
+  "supplyChain": "Supply Chain Performance",
+  "consumerAndMarket": "Consumer and Market Trends",
+  "innovation": "Innovation",
+  "blogs": {
+    "title": "You Might Be Interested!",
+    "description": "Perspectives on issues that are reshaping supply chain.",
+    "breadcrumb": "Blogs",
+    "list": "List of articles",
+    "listEmpty": "There are no articles.",
+    "listDescription": "We will update the latest knowledge, experience and technology information, helping you grasp trends and apply them to business practice."
+  }
 }

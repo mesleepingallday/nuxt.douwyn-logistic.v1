@@ -5,4 +5,17 @@
   "contact": "联系",
   "home": "首页",
   "latest-articles-header": "Douwyn Logistic 最新文章",
+  "on": "于",
+  "sustainability": "可持续性",
+  "supplyChain": "供应链绩效",
+  "consumerAndMarket": "消费者和市场趋势",
+  "innovation": "创新",
+  "blogs": {
+    "title": "您可能感兴趣的内容！",
+    "description": "重塑供应链问题的多重视角。",
+    "breadcrumb": "博客",
+    "list": "文章列表",
+    "listEmpty": "没有文章。",
+    "listDescription": "我们将更新最新的知识、经验和技术信息，帮助您掌握趋势并将其应用于商业实践。",
+  }
 }

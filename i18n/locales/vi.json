@@ -4,5 +4,18 @@
   "news": "Tin tức",
   "contact": "Liên hệ",
   "home": "Trang chủ",
-  "latest-articles-header": "Các bài viết mới nhất từ Douwyn Logistic"
+  "latest-articles-header": "Các bài viết mới nhất từ Douwyn Logistic",
+  "on": "Lúc",
+  "sustainability": "Tính bền vững",
+  "supplyChain": "Hiệu suất chuỗi cung ứng",
+  "consumerAndMarket": "Xu hướng người tiêu dùng và thị trường",
+  "innovation": "Đổi mới",
+  "blogs": {
+    "title": "Có thể bạn quan tâm!",
+    "description": "Các góc nhìn về những vấn đề đang định hình lại chuỗi cung ứng.",
+    "breadcrumb": "Bài viết",
+    "list": "Danh sách bài viết",
+    "listEmpty": "Không có bài viết nào.",
+    "listDescription": "Chúng tôi sẽ cập nhật kiến thức, kinh nghiệm và thông tin công nghệ mới nhất, giúp bạn nắm bắt xu hướng và áp dụng vào thực tế kinh doanh."
+  }
 }

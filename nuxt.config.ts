@@ -6,7 +6,8 @@ export default defineNuxtConfig({
     '@nuxt/ui-pro',
     '@nuxt/content',
     '@nuxtjs/i18n',
-    '@nuxtjs/strapi'
+    '@nuxtjs/strapi',
+    'dayjs-nuxt'
   ],
 
   devtools: {
@@ -22,7 +23,7 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    '/': { prerender: true }
+    '/': { prerender: true },
   },
 
   future: {
@@ -40,12 +41,18 @@ export default defineNuxtConfig({
     }
   },
 
+  image: {
+    strapi: {
+      baseURL: `${process.env.STRAPI_URL}/uploads`
+    }
+  },
+
   i18n: {
     customRoutes: 'config',
     pages: {
       en: '/blog',
       vi: '/bai-viet',
-      zh_cn: '/blog/zh-cn',
+      zh_cn: '/blog/zh-cn'
     },
     lazy: true,
     strategy: 'prefix_except_default',
