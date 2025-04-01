@@ -5,7 +5,7 @@ import { useSchemaOrg } from '@unhead/schema-org/vue'
 import type { Post } from '~/types/Post'
 import HeadingPost from '~/components/Blog/HeadingPost.vue'
 
-const { t, locale } = useI18n<StrapiLocale | null | undefined>()
+const { t, locale } = useI18n()
 const localePath = useLocalePath()
 const appConfig = useAppConfig()
 const { find } = useStrapi()
@@ -90,7 +90,7 @@ useSchemaOrg([
     about: {
       '@id': '#identity'
     },
-    datePublished: new Date(2024, 12, 8),
+    datePublished: new Date(2025, 4, 1),
     image: 'https://douwyn.com/logo.jpg',
     primaryImageOfPage: {
       '@id': 'https://douwyn.com/logo.jpg'
@@ -143,7 +143,10 @@ watch(() => locale.value, () => {
 </script>
 
 <template>
-  <div id="app" class="dark:bg-gray-900 dark:text-white">
+  <div
+    id="app"
+    class="dark:bg-gray-900 dark:text-white"
+  >
     <div class="container mx-auto px-4 py-8">
       <UBreadcrumb :items="items" />
 
@@ -218,26 +221,15 @@ watch(() => locale.value, () => {
         </div>
       </div>
 
-      <a
-        href="#"
-        class="inline-block mt-4 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+      <div
+        class="flex items-center mt-4 text-sm text-gray-600 dark:text-gray-400 hover:underline hover:cursor-pointer"
       >
-        <svg
-          class="w-4 h-4 inline-block align-middle mr-1"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m-15.357-2A8.003 8.003 0 0119.416 15m0 0h-4"
-          />
-        </svg>
+        <UIcon
+          name="material-symbols-light:reset-settings"
+          class="size-4 mr-2"
+        />
         Reset filters
-      </a>
+      </div>
 
       <div class="mt-6 flex space-x-4">
         <ULink

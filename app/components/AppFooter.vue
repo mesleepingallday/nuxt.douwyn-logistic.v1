@@ -1,8 +1,29 @@
 <script setup lang="ts">
+const { t } = useI18n()
+
+const items = [
+  {
+    label: 'Legal Notices',
+    to: '#'
+  },
+  {
+    label: 'Data Protection Policy',
+    to: '#'
+  },
+  {
+    label: 'Code of Conduct',
+    to: '#'
+  },
+  {
+    label: 'Business Partner',
+    to: '#'
+  }
+]
+
 const columns = [{
-  label: 'Resources',
+  label: 'Solutions',
   children: [{
-    label: 'Help center'
+    label: 'Warehousing'
   }, {
     label: 'Docs'
   }, {
@@ -11,7 +32,7 @@ const columns = [{
     label: 'Changelog'
   }]
 }, {
-  label: 'Features',
+  label: 'About Us',
   children: [{
     label: 'Affiliates'
   }, {
@@ -22,7 +43,19 @@ const columns = [{
     label: 'Sponsors'
   }]
 }, {
-  label: 'Company',
+  label: 'Activities',
+  children: [{
+    label: 'About'
+
+  }, {
+    label: 'Pricing'
+  }, {
+    label: 'Careers'
+  }, {
+    label: 'Blog'
+  }]
+}, {
+  label: 'Follow Us',
   children: [{
     label: 'About'
   }, {
@@ -32,21 +65,8 @@ const columns = [{
   }, {
     label: 'Blog'
   }]
-}]
-
-const toast = useToast()
-
-const email = ref('')
-const loading = ref(false)
-
-function onSubmit() {
-  loading.value = true
-
-  toast.add({
-    title: 'Subscribed!',
-    description: 'You\'ve been subscribed to our newsletter.'
-  })
 }
+]
 </script>
 
 <template>
@@ -59,29 +79,17 @@ function onSubmit() {
     <template #top>
       <UContainer>
         <UFooterColumns :columns="columns">
-          <template #right>
-            <form @submit.prevent="onSubmit">
-              <UFormField
-                name="email"
-                label="Subscribe to our newsletter"
-                size="lg"
-              >
-                <UInput
-                  v-model="email"
-                  type="email"
-                  class="w-full"
-                  placeholder="Enter your email"
-                >
-                  <template #trailing>
-                    <UButton
-                      type="submit"
-                      size="xs"
-                      label="Subscribe"
-                    />
-                  </template>
-                </UInput>
-              </UFormField>
-            </form>
+          <template #left>
+            <NuxtLink to="/">
+              <UColorModeImage
+                light="/logos/bosch-light.svg"
+                dark="/logos/bosch.svg"
+                class="w-auto h-6 shrink-0"
+              />
+            </NuxtLink>
+            <p class="mt-4 text-sm text-(--ui-text-muted) max-w-[300px]">
+              {{ t('description') }}
+            </p>
           </template>
         </UFooterColumns>
       </UContainer>
@@ -89,34 +97,14 @@ function onSubmit() {
 
     <template #left>
       <p class="text-sm text-(--ui-text-muted)">
-        Copyright © {{ new Date().getFullYear() }}. All rights reserved.
+        Copyright Douwyn Logistics © {{ new Date().getFullYear() }}. All rights reserved.
       </p>
     </template>
 
     <template #right>
-      <UButton
-        to="#"
-        target="_blank"
-        icon="i-simple-icons-discord"
-        aria-label="Discord"
-        color="neutral"
-        variant="ghost"
-      />
-      <UButton
-        to="#"
-        target="_blank"
-        icon="i-simple-icons-x"
-        aria-label="X"
-        color="neutral"
-        variant="ghost"
-      />
-      <UButton
-        to="https://github.com/nuxt-ui-pro/landing/tree/v3"
-        target="_blank"
-        icon="i-simple-icons-github"
-        aria-label="GitHub"
-        color="neutral"
-        variant="ghost"
+      <UNavigationMenu
+        :items="items"
+        variant="link"
       />
     </template>
   </UFooter>

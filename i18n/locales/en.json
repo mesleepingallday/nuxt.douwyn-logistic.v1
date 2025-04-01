@@ -1,5 +1,6 @@
 {
   "welcome": "Welcome",
+  "description": "Douwyn Logistic, since 1967, we have strived to deliver the right goods, at the right place, at the right time, for the good of all.",
   "search": "Search",
   "news": "News",
   "contact": "Contact",
@@ -14,8 +15,8 @@
     "title": "You Might Be Interested!",
     "description": "Perspectives on issues that are reshaping supply chain.",
     "breadcrumb": "Blogs",
-    "list": "List of articles",
-    "listEmpty": "There are no articles.",
+    "list": "Latest Blogs",
+    "listEmpty": "There are no blogs.",
     "listDescription": "We will update the latest knowledge, experience and technology information, helping you grasp trends and apply them to business practice."
   }
 }

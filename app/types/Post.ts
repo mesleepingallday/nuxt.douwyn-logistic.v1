@@ -10,7 +10,13 @@ export interface Post {
   slug: string
   // content: string
   excerpt: string
-  featured_image: string
+  featured_image: {
+    name: string
+    url: string
+    alternativeText: string
+    width?: number
+    height?: number
+  }
   category?: {
     name: string
     slug: string

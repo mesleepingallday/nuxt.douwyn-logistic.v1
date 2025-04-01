@@ -23,7 +23,7 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    '/': { prerender: true },
+    '/': { prerender: true }
   },
 
   future: {
@@ -38,12 +38,6 @@ export default defineNuxtConfig({
         commaDangle: 'never',
         braceStyle: '1tbs'
       }
-    }
-  },
-
-  image: {
-    strapi: {
-      baseURL: `${process.env.STRAPI_URL}/uploads`
     }
   },
 
@@ -63,6 +57,12 @@ export default defineNuxtConfig({
       cookieKey: 'i18n_redirected',
       alwaysRedirect: true,
       redirectOn: 'root'
+    }
+  },
+
+  image: {
+    strapi: {
+      baseURL: `${process.env.STRAPI_URL}/uploads`
     }
   },
 

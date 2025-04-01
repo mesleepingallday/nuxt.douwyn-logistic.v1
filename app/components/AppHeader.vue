@@ -15,6 +15,29 @@ const itemsRight = computed(() => [{
   active: activeHeadings.value.includes('pricing')
 }])
 
+const items = computed(() => [
+  {
+    label: 'SUPPLY CHANGE',
+    to: '#'
+  },
+  {
+    label: 'OUR SOLUTIONS',
+    to: '#'
+  },
+  {
+    label: 'YOUR ACTIVITIES',
+    to: '#'
+  },
+  {
+    label: 'ABOUT US',
+    to: '#'
+  },
+  {
+    label: 'CAREER',
+    to: '#'
+  }
+])
+
 const { locale } = useI18n()
 
 nuxtApp.hooks.hookOnce('page:finish', () => {
@@ -54,6 +77,8 @@ nuxtApp.hooks.hookOnce('page:finish', () => {
         />
       </NuxtLink>
     </template>
+
+    <UNavigationMenu :items="items" />
 
     <template #right>
       <UNavigationMenu
